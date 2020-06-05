@@ -34,7 +34,6 @@ func start_simulation(config: Dictionary):
 func _on_timeout():
 	var turn = StatsEngine.health_states(population)
 	statistics.append(turn)
-	print(turn)
 	if turn[1] < 1:
 		get_tree().paused = true
 
@@ -42,6 +41,7 @@ func reset() -> void:
 	for indiv in population:
 		indiv.queue_free()
 	population.clear()
+	statistics.clear()
 
 # Returns random (x, y) coordinates within the SimArea bounds.
 func rand_pos() -> Vector2:
