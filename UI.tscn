@@ -1,0 +1,211 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Textures/Play_Button.png" type="Texture" id=1]
+[ext_resource path="res://Textures/Stop-Button.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/StateController.gd" type="Script" id=3]
+[ext_resource path="res://Textures/Pause_Button.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/StopButton.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/ExportStats.gd" type="Script" id=6]
+
+[node name="Config" type="Control"]
+anchor_right = 0.216
+anchor_bottom = 0.75
+margin_right = -0.184006
+margin_bottom = 1.99997
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chance_Label" type="RichTextLabel" parent="."]
+margin_left = 7.0
+margin_top = 78.0
+margin_right = 138.0
+margin_bottom = 118.0
+rect_pivot_offset = Vector2( 77, -17 )
+text = "% Infection Chance"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Distancing_Label" type="RichTextLabel" parent="."]
+margin_left = 8.0
+margin_top = 118.0
+margin_right = 132.0
+margin_bottom = 158.0
+rect_pivot_offset = Vector2( 77, -17 )
+text = "% Social Distancing"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Infection_Label" type="RichTextLabel" parent="."]
+margin_left = 9.80499
+margin_top = 158.525
+margin_right = 133.805
+margin_bottom = 198.525
+rect_pivot_offset = Vector2( 77, -17 )
+text = "Infection Duration"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Immunity_Label" type="RichTextLabel" parent="."]
+margin_left = 9.80501
+margin_top = 194.713
+margin_right = 133.805
+margin_bottom = 234.713
+rect_pivot_offset = Vector2( 77, -17 )
+text = "Immunity Duration"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mortality_Label" type="RichTextLabel" parent="."]
+margin_left = 8.9025
+margin_top = 231.715
+margin_right = 132.902
+margin_bottom = 271.715
+rect_pivot_offset = Vector2( 77, -17 )
+text = "% Mortality Rate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings_Label" type="RichTextLabel" parent="."]
+margin_left = 43.0
+margin_top = 8.0
+margin_right = 169.0
+margin_bottom = 31.0
+text = "Simulation Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Population_Label" type="RichTextLabel" parent="."]
+anchor_left = 0.024
+anchor_right = 0.024
+margin_left = 6.984
+margin_top = 43.0
+margin_right = 87.984
+margin_bottom = 67.0
+rect_pivot_offset = Vector2( 118, 51 )
+text = "Population"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Population_Input" type="LineEdit" parent="."]
+margin_left = 141.0
+margin_top = 38.0
+margin_right = 199.0
+margin_bottom = 62.0
+max_length = 4
+placeholder_text = "5-1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Infect_Chance_Input" type="LineEdit" parent="."]
+margin_left = 142.0
+margin_top = 75.0
+margin_right = 200.0
+margin_bottom = 99.0
+text = "50"
+max_length = 3
+placeholder_text = "1-100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Distancing_Pop_Input" type="LineEdit" parent="."]
+margin_left = 142.0
+margin_top = 112.0
+margin_right = 200.0
+margin_bottom = 136.0
+text = "50"
+max_length = 3
+placeholder_text = "1-100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Infection_Dur_Input" type="LineEdit" parent="."]
+margin_left = 141.097
+margin_top = 154.418
+margin_right = 199.097
+margin_bottom = 178.418
+hint_tooltip = "The amount of time (s) that an infected individual is contageous, before gaining immunity to the disease."
+text = "14"
+max_length = 4
+placeholder_text = "1-9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Immunity_Dur_Input" type="LineEdit" parent="."]
+margin_left = 141.098
+margin_top = 191.42
+margin_right = 199.098
+margin_bottom = 215.42
+hint_tooltip = "The amount of time (s) that an infected individual is contageous, before gaining immunity to the disease."
+text = "9999"
+max_length = 4
+placeholder_text = "1-9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mortality_Input" type="LineEdit" parent="."]
+margin_left = 140.195
+margin_top = 228.423
+margin_right = 198.195
+margin_bottom = 252.423
+hint_tooltip = "The amount of time (s) that an infected individual is contageous, before gaining immunity to the disease."
+text = "2"
+max_length = 3
+placeholder_text = "1-100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayPause_Button" type="TextureButton" parent="."]
+margin_left = 74.2311
+margin_top = 284.994
+margin_right = 113.231
+margin_bottom = 323.994
+rect_pivot_offset = Vector2( 57.7689, 84.426 )
+toggle_mode = true
+keep_pressed_outside = true
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 4 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stop_Button" type="TextureButton" parent="."]
+margin_left = 113.752
+margin_top = 285.432
+margin_right = 152.752
+margin_bottom = 324.432
+keep_pressed_outside = true
+texture_normal = ExtResource( 2 )
+expand = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Export_Stats_Button" type="Button" parent="."]
+margin_left = 52.0
+margin_top = 350.0
+margin_right = 172.0
+margin_bottom = 380.0
+hint_tooltip = "Export Statistics from the Current Simulation to a CSV  file."
+shortcut_in_tooltip = false
+text = "Export Statistics"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

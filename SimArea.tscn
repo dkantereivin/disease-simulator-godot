@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Simulation.gd" type="Script" id=2]
+
+[node name="SimArea" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( -1.36844, -2.89474, 827.754, -0.0786514, 825.187, 598.782, -1.05261, 600.263, -1.44241, 2.01712, 7.46832, 2.40454, 6.67053, 592.895, 821.594, 595.189, 823.647, 3.0014, -1.44241, 1.82341 )
+
+[node name="Sim_Timer" type="Timer" parent="."]
+wait_time = 2.0
